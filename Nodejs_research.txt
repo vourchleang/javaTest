@@ -1,0 +1,127 @@
+https://www.learn2crack.com/2016/09/android-user-registration-login-node-server.html
+robomongo(Robomongo to Robo 3T) : 2
+- MongoDB 3.4 cluster view on Mongo Atlas web site
+- MongoDB 3.4 cluster view on Robo 3T
+1.MongoDB server in your Operating System
+2.Robomongo, a GUI client used to create and view databases.
+3. Create a new package.json file to define all the required Node dependencies
+a. basic-auth : for login authentication. The email and password is sent by client as a Base64 (represent binary data in an ASCII string format) encoded string in header which is decoded by this module(namespaced).
+ bcyptjs
+Use to create and verify password hash using bcrpyt hasing algorithm.
+ body-parser
+This is used to parse the JSON body in each request.
+ express
+This is the complete framework used to create RESTful web services.
+jsonwebtoken
+This is used to create JSON Web Token which is used for session handling.
+mongoose
+This module is used to connect to MongoDB database.
+morgan
+This module is used to print logs in terminal for each http request.
+nodemailer
+This module is used to sent mail using SMTP (Nodemailer is a module for Node.js applications to allow easy as cake email sending. ) for forgot password process.
+randomstring
+This module is used to generate random string which we use as a token for reset password.
+-  The register file consists of register function which saves data to MongoDB database.
+When creating a Promise we call resolve() for success operation and reject() for failure operation. 
+- The login function is defined which authenticates the user and returns a JSON Web Token or else it throws a error.
+- profile has fucnction which returns users profile
+-  password file has definition for  change password and rest password functionalities. The rest password is a two step process. The first step is to generate a random token and send to user’s email using nodemailer. The second step is to verify the token and change the password to a new one.
++ ../models/user (Learn how to use Mongoose to store and validate user data in MongoDB).
++ Using bcrypt.js module to hash password 
++ bcrypt.genSaltSync(10) : the cost of processing the data. 
+using in mongodb with nodejs
+1. what? 
+2. how to process? 
+3. main structure in mongodb and nodejs?
+4. syntax for communication 
+5. code for relationship
+I. Nodejs
+Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.JavaScript is used primarily for client-side scripting.Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page .
+Node.js allows the creation of Web servers and networking tools using JavaScript and a collection of "modules" that handle various core functionality. Node.js 's modules use an API designed to reduce the complexity of writing server applications.
+Node.js brings event-driven programming to web servers. event-driven programming that uses callbacks to signal the completion of a task.
+- Mongodb : MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemata. 
+MongoDB provides three ways to perform aggregation: the aggregation pipeline, the map-reduce function, and single-purpose aggregation methods.
+- Callback is an asynchronous equivalent for a function. A callback function is called at the completion of a given task.
+-Buffer class is a global class that can be accessed in an application without importing the buffer module.ode provides Buffer class which provides instances to store raw data similar to an array of integers.
+-Streams are objects that let you read data from a source or write data to a destination in continuous fashion. In Node.js, there are four types of streams -
+Readable - Stream which is used for read operation.
+Writable - Stream which is used for write operation.
+Duplex - Stream which can be used for both read and write operation.
+Transform - A type of duplex stream where the output is computed based on input.
+- The Node File System (fs) module can be imported (var fs = require("fs"))
+- fs.rmdir(path, callback)- remove a file
+- fs.readdir(path, callback)- read a file
+- fs.mkdir(path[, mode], callback)-create a file
+- fs.unlink(path, callback) -delete a file
++ Synchronous vs Asynchronous
+Every method in the fs module has synchronous as well as asynchronous forms. Asynchronous methods take the last parameter as the completion function callback and the first parameter of the callback function as error. It is better to use an asynchronous method instead of a synchronous method.
+- Global Objects : 
++ The __filename represents the filename of the code being executed.
++ The __dirname represents the name of the directory that the currently executing script resides in.
++ The setTimeout (cb, ms) global function is used to run callback cb after at least ms milliseconds.
++ The clearTimeout (t) global function is used to stop a timer that was previously created with setTimeout(). 
++ The setInterval (cb, ms) global function is used to run callback cb repeatedly after at least ms milliseconds.
++ A Web Server is a software application which handles HTTP requests sent by the HTTP client, like web browsers, and returns web pages in response to the clients. 
++ REST is web standards based architecture and uses HTTP Protocol.
++ HTTP methods
+- GET -read only
+- PUT - to create a new resource
+-DELETE -remove a resource
+-POST -update a existing resource or create a new resource.
++ mongodb  have 2 :
+	- references : many to many
+	- embeded : one to one 
++ in order to read HTTP POST data , we have to use "body-parser" node module. body-parser is a piece of express middleware that reads a form's input and stores it as a javascript object accessible through req.body.
++ Most of the servers written in Java or C use multithreading.
++ Running Node.js server Node.js is a command-line tool. After installing it, the node command will be available on our terminal. The node command accepts several arguments, but the most important one is the file that contains our JavaScript.
+Ex : const http = require('http');
+//create a Web server
+//http is a JS object with functions
+http.createServer(function(req,res){
+    res.writeHead(200, {'Content-Type':'text/plain'});
+    res.end('Hello World\n');
+
+}).listen(1000);
+console.log("port 1000");
+
++ In Node.js, we have the require global function that provides the mechanism to use external modules.
++ Defining and using modules JavaScript as a language does not have mechanisms to define real classes. In fact, everything in JavaScript is an object.
+We normally inherit properties and functions from one object to another. We encapsulate logic in modules. Every module is defined in its own file.
++ The module.exports or exports is a special object which is included in every JS file in the Node.js application by default. module is a variable that represents current module and exports is an object that will be exposed as a module.
++ So, in the end, module.exports is returned and this is what require produces.
++ exports : shortcut for module.exports
+?	Along with exports, we also have module.exports available. There is a difference between the two.
++ require() : is local to each module. require caches the object that is returned.
+module : a reference to the current module
+1.	we have a module that represents this person
+2.	//public property
+3.	exports.name = "Hello world...";
+4.	//public function
+5.	exports.read = function(){
+6.	    console.log('I am reading '+ exports.name);
+7.	}
+ 2. Now, we will use require to access them
+const p = require('./person.js');
+console.log('Name :'+p.name);
+p.read();
+3. cmd  ->->-> node .\script.js
++ The module that is responsible for the read and write processes is called fs (it is derived from filesystem).
++ Most of the API functions have synchronous versions. script could be written with writeFileSync, as follows: 	fs.writeFileSync('data.txt', 'Hello world!');
++ it is a best practice with Node to use asynchronous versions of methods wherever possible.
++ write file system
+const fs = require('fs');
+//write file
+fs.writeFile('hello.txt','Write file in text...',function(err){
+    if(err)throw err;
+    console.log('successful with saving ...')
+});
+
++ read fs
+// read file
+fs.readFile('hello.txt',function(err, data){
+    if(err)throw err;
+    console.log('show data : '+data.toString);
+});
+
+https://www.tutorialsteacher.com/mvc/htmlhelper-textbox-textboxfor
