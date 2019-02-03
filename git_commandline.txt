@@ -1,0 +1,13 @@
+$ git config --global user.name "Your Name Comes Here"
+$ git config --global user.email you@yourdomain.example.com
++clone
+
++ push
+$git remote add origin URL_NAME
+$git -v
+$git remote -v
+$git add .
+$git commit -m "TITLE"
+$git push origin master
+
++ pull
