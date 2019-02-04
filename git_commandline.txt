@@ -11,3 +11,8 @@ $git commit -m "TITLE"
 $git push origin master
 
 + pull
+$git remote add origin URL_NAME
+git stash clear
+git stash create
+$ git stash
+$ git pull
