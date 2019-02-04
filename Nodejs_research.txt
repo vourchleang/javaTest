@@ -125,3 +125,6 @@ fs.readFile('hello.txt',function(err, data){
 });
 
 https://www.tutorialsteacher.com/mvc/htmlhelper-textbox-textboxfor
+1. android studio connect to api
+2. access token in android and api
+3. test login with api (Form login)
