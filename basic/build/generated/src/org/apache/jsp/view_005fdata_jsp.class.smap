@@ -1,0 +1,18 @@
+SMAP
+view_005fdata_jsp.java
+JSP
+*S JSP
+*F
++ 0 view_data.jsp
+view_data.jsp
+*L
+5,33:49
+38,15:83
+52,2:98
+54,5:100,3
+59:115
+60,3:116,3
+63,2:125
+65,8:128
+72,6:136
+*E
